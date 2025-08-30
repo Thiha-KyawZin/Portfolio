@@ -43,3 +43,34 @@ navbarItems.forEach(item => {
         item.classList.add('active');
     });
 });
+
+// Add Experience Section Dynamically
+const experiences = [
+    {
+        role: "Web Developer (Laravel)",
+        company: "CGM Golden Land",
+        duration: "2024 - Present",
+        description: "Worked on developing and maintaining web applications using PHP and the Laravel framework. Responsibilities included building new features, maintaining existing sites, integrating APIs, managing databases, and implementing server-side logic. Also collaborated on mobile application development using Flutter."
+    },
+];
+
+const experienceContainer = document.getElementById('experience-body');
+experiences.forEach(exp => {
+    const card = document.createElement('div');
+    card.className = 'experience-card';
+    card.innerHTML = `
+        <div class="experience-card-header">
+            <div class="card-header-left">
+                <h4 class="title">${exp.role}</h4>
+                <span class="company-name">${exp.company}</span>
+            </div>
+            <div class="card-header-right">
+                <span class="duration">${exp.duration}</span>
+            </div>
+        </div>
+        <div class="experience-card-body">
+            <p class="description">${exp.description}</p>
+        </div>
+    `;
+    experienceContainer.appendChild(card);
+})

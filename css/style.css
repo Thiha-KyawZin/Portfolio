@@ -5,7 +5,7 @@
     list-style-type: none;
     text-decoration: none;
     scroll-behavior: smooth;
-    font-family:'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     border: none;
 }
 
@@ -24,13 +24,14 @@
 
 body {
     background-color: var(--primary-bg-color);
-    /* background-color: #f0f0f0; */
     color: #f0f0f0;
     position: relative;
 
 }
 
-.body-container {
+.main-layout {
+    display: flex;
+    gap: 70px;
     padding: 50px 40px 30px;
 }
 
@@ -59,21 +60,20 @@ body {
 
 .home {
     width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: row;
-    /* align-items: center; */
-    justify-content: center;
-    gap: 70px;
+    min-height: 80vh;
 }
 
 .left-content {
     width: 30%;
+    position: sticky;
+    top: 50px;
+    height: fit-content;
+    align-self: flex-start;
 }
 
 .right-content {
     width: 70%;
-    padding: 65px 0;
+    padding: 45px 0;
 }
 
 .left-content-container {
@@ -84,20 +84,20 @@ body {
     border: 1px solid rgba(128, 128, 128, 0.247);
 }
 
-.left-content-container .card,
-.card .card-body {
+.left-content-container .home-card,
+.home-card .home-card-body {
     display: flex;
     flex-direction: column;
     gap: 25px;
     text-align: center;
 }
 
-.card-body .card-body-title {
+.home-card-body .card-body-title {
     font-size: 24px;
     font-weight: 600;
 }
 
-.card-body .card-body-social-icons ul {
+.home-card-body .home-card-body-social-icons ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -105,24 +105,25 @@ body {
     gap: 10px;
 }
 
-.card-body-social-icons ul .social-item {
+.home-card-body-social-icons ul .social-item {
     padding: 7px;
     border: 1px solid rgba(128, 128, 128, 0.575);
     border-radius: 12px;
 }
+
 .social-item .icon {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.card-footer .card-button-container {
+.home-card-footer .home-card-button-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.card-button-container .card-button {
+.home-card-button-container .card-button {
     width: 49%;
     height: 45px;
     font-size: 16px;
@@ -148,7 +149,7 @@ body {
     height: 20px;
 }
 
-.right-content .right-content-navbar {
+.home-container .home-navbar {
     position: fixed;
     top: 180px;
     right: 25px;
@@ -159,14 +160,14 @@ body {
     z-index: 100;
 }
 
-.right-content-navbar .navbar-list {
+.home-navbar .navbar-list {
     display: flex;
     flex-direction: column;
     gap: 18px;
     align-items: center;
 }
 
-.navbar-list .icon{
+.navbar-list .icon {
     width: 23px;
     height: 23px;
 }
@@ -192,14 +193,14 @@ body {
 }
 
 .navbar-item.active:hover {
-  background-color: var(--navbar-bg-color);
+    background-color: var(--navbar-bg-color);
 }
 
-.right-content-container .right-content-body {
+.home-container .home-body {
     width: 90%;
 }
 
-.right-content-body .content-body-container {
+.home-body .content-body-container {
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -227,17 +228,25 @@ body {
 }
 
 #changing-text {
-  color: #28E98C;
-  font-weight: bold;
-  white-space: nowrap;
-  border-right: 5px solid #aee4ced0;
-  animation: blink 0.7s infinite;
+    color: #28E98C;
+    font-weight: bold;
+    white-space: nowrap;
+    border-right: 5px solid #aee4ced0;
+    animation: blink 0.7s infinite;
 }
 
 @keyframes blink {
-  0% { border-color: transparent; }
-  50% { border-color: #00ff99; }
-  100% { border-color: transparent; }
+    0% {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #00ff99;
+    }
+
+    100% {
+        border-color: transparent;
+    }
 }
 
 .home-content-footer {
@@ -265,4 +274,65 @@ body {
     font-size: 20px;
     font-weight: 400;
     color: var(--secondary-text-color);
+}
+
+.experience {
+    margin-top: 80px;
+}
+
+.experience-header {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.experience-body {
+    width: 90%;
+}
+
+.experience-card {
+    padding: 20px;
+    background-color: var(--secondary-bg-color);
+    border: 1px solid rgba(128, 128, 128, 0.247);
+    border-radius: 16px;
+}
+
+.experience-card-header {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.363);
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.experience-card-body {
+    text-align: justify;
+    line-height: 1.2;
+    color: var(--secondary-text-color);
+    font-weight: 500;
+}
+
+.card-header-right {
+    padding: 8px 10px;
+    background-color: #1F1F1F;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.card-header-left .title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.card-header-left .company-name {
+    font-size: 14px;
+    color: var(--secondary-text-color);
+    margin-top: 2px;
+    display: block;
+    font-weight: 500;
 }
