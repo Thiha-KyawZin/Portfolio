@@ -9,6 +9,16 @@
     border: none;
 }
 
+a {
+    text-decoration: none;
+    color: gray;
+}
+
+a:hover {
+    /* color: gray; */
+    color: inherit;
+}
+
 :root {
     --primary-bg-color: #000000;
     --primary-text-color: #f0f0f0;
@@ -35,6 +45,10 @@ body {
     padding: 50px 40px 30px;
 }
 
+.hide {
+    display: none;
+}
+
 .icon {
     width: 25px;
     height: 25px;
@@ -51,6 +65,64 @@ body {
     transition: all 0.3s ease;
 }
 
+.card {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: var(--secondary-bg-color);
+    border: 1px solid rgba(128, 128, 128, 0.247);
+    border-radius: 16px;
+}
+
+.card-header {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.363);
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.card-body {
+    text-align: justify;
+    line-height: 1.2;
+    color: var(--secondary-text-color);
+    font-weight: 500;
+}
+
+.card-header-right {
+    padding: 8px 10px;
+    background-color: #1F1F1F;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.card-header-left .title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.card-header-left .sub-title {
+    font-size: 14px;
+    color: var(--secondary-text-color);
+    margin-top: 2px;
+    display: block;
+    font-weight: 500;
+}
+
+.container-header {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.container-body {
+    width: 90%;
+}
+
 .profile-img {
     width: 320px;
     border-radius: 15px;
@@ -60,7 +132,6 @@ body {
 
 .home {
     width: 100%;
-    min-height: 80vh;
 }
 
 .left-content {
@@ -72,6 +143,9 @@ body {
 }
 
 .right-content {
+    display: flex;
+    flex-direction: column;
+    gap: 65px;
     width: 70%;
     padding: 45px 0;
 }
@@ -196,10 +270,6 @@ body {
     background-color: var(--navbar-bg-color);
 }
 
-.home-container .home-body {
-    width: 90%;
-}
-
 .home-body .content-body-container {
     display: flex;
     flex-direction: column;
@@ -256,6 +326,7 @@ body {
 .home-content-footer .stats {
     margin-top: 20px;
     display: flex;
+    justify-content: center;
     flex-direction: row;
     gap: 40px;
 }
@@ -277,62 +348,96 @@ body {
 }
 
 .experience {
-    margin-top: 80px;
+    margin: 70px 0 0;
 }
 
-.experience-header {
+.project-body {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 18px; 
+}
+
+.project-body-card {
+    padding: 14px 16px 20px;
+    background-color: var(--secondary-bg-color);
+    border-radius: 16px;
+    border: 1px solid rgba(128, 128, 128, 0.247);
+    transition: all 0.3s ease;
+}
+
+.project-card-image-container {
+    width: 100%;
+    height: 335px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border: 1px solid rgb(41, 41, 41);
+}
+
+.project-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-card-body-title {
     font-size: 20px;
     font-weight: 600;
-    margin-bottom: 18px;
+    margin-bottom: 8px;
+}
+
+.icon-arrow-container {
+    padding: 12px;
+    border-radius: 50%;
+    background-color: var(--download-btn-bg-color);
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 8px;
+    cursor: pointer;
+    overflow: hidden;
 }
 
-.experience-body {
-    width: 90%;
+
+.clicked {
+    animation: flyOutIn 0.4s ease forwards;
 }
 
-.experience-card {
-    padding: 20px;
-    background-color: var(--secondary-bg-color);
-    border: 1px solid rgba(128, 128, 128, 0.247);
-    border-radius: 16px;
+@keyframes flyOutIn {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    40% {
+        transform: translate(25px, -25px);
+        opacity: 0;
+    }
+
+    60% {
+        transform: translate(-25px, 25px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
 }
 
-.experience-card-header {
+.project-body-footer {
     display: flex;
-    align-items: start;
-    justify-content: space-between;
-    border-bottom: 2px solid rgba(128, 128, 128, 0.363);
-    padding-bottom: 12px;
-    margin-bottom: 12px;
+    justify-content: center;
 }
 
-.experience-card-body {
-    text-align: justify;
-    line-height: 1.2;
-    color: var(--secondary-text-color);
-    font-weight: 500;
-}
-
-.card-header-right {
-    padding: 8px 10px;
-    background-color: #1F1F1F;
-    border-radius: 8px;
-    font-size: 16px;
+.load-more {
     font-weight: 600;
-}
-
-.card-header-left .title {
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.card-header-left .company-name {
-    font-size: 14px;
-    color: var(--secondary-text-color);
-    margin-top: 2px;
-    display: block;
-    font-weight: 500;
+    color: var(--primary-text-color);
+    background-color: #444444;
+    text-align: center;
 }

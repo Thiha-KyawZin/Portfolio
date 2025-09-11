@@ -73,7 +73,7 @@
                 <!-- Home Section -->
                 <div class="home">        
                     <div class="home-container">
-                        <div class="home-body">
+                        <div class="container-body">
                             <div class="content-body-container">
                                 <div class="home-content-header">
                                     <span class="home-content-header-greeting">
@@ -92,9 +92,8 @@
                                 <div class="home-content-footer">
                                     <div class="stats">
                                         <div class="stats-count" id="change-stats">0<span>Completed Projects</span></div>
-                                        <div class="stats-count">1+<span>Years of Experience</span></div>
+                                        <div class="stats-count" id="experience-duration"></div>
                                         <div class="stats-count">0<span>Happy Clients</span></div>
-                                        <div class="stats-count">0<span>Awards Received</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -111,12 +110,12 @@
                                         <img src="/assets/svg_icons/briefcase-svgrepo-com.svg" alt="experience" class="icon icon-experience"/>
                                     </li>
                                 </a>
-                                <a href="#">
+                                <a href="#project">
                                     <li class="navbar-item">
                                         <img src="/assets/svg_icons/rocket-launch-svgrepo-com.svg" alt="project" class="icon icon-project"/>
                                     </li>
                                 </a>
-                                <a href="#">
+                                <a href="#education">
                                     <li class="navbar-item">
                                         <img src="/assets/svg_icons/graduation-svgrepo-com.svg" alt="graduation" class="icon icon-graduation"/>
                                     </li>
@@ -134,15 +133,40 @@
                 <!-- Experience Section -->
                 <div class="experience" id="experience">
                     <div class="experience-container">
-                        <div class="experience-header">
+                        <div class="container-header">
                             <img src="/assets/svg_icons/briefcase-svgrepo-com.svg" alt="experience" class="icon icon-experience">
                             <h3>Experience</h3>
                         </div>
-                        <div class="experience-body" id="experience-body">
-                        </div>
+                        <div class="container-body" id="experience-body"></div>
                     </div>
                 </div>
                 <!-- End of Experience Section -->
+                <!-- Project Section-->
+                <div class="project" id="project">
+                    <div class="project-container">
+                        <div class="container-header">
+                            <img src="/assets/svg_icons/rocket-launch-svgrepo-com.svg" alt="project" class="icon icon-project">
+                            <h3>Projects</h3>
+                        </div>
+                        <div class="container-body project-body" id="project-body">
+                            <div class="project-body-footer">
+                                <button class="btn load-more">Load More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Project Section-->
+                <!-- Education Section-->
+                <div class="education" id="education">
+                    <div class="education-container">
+                        <div class="container-header">
+                            <img src="/assets/svg_icons/graduation-svgrepo-com.svg" alt="education" class="icon icon-education">
+                            <h3>Education</h3>
+                        </div>
+                        <div class="container-body" id="education-body"></div>
+                    </div>
+                </div>
+                <!-- End Education Section-->
             </div>
         </div>
     </div>
