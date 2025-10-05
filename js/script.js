@@ -20,6 +20,29 @@ function buildCards(dataList, container) {
     });
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const leftContent = document.querySelector('#left-content');
+    const homeNavbar = document.querySelector('.home-navbar');
+    const navObserverOptions = {
+      root: null,
+      threshold: 0.1,
+    };
+
+    const navObserverCallback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          homeNavbar.classList.remove('hidden');
+        } else {
+          homeNavbar.classList.add('hidden');
+        }
+      });
+    };
+    const navObserver = new IntersectionObserver(navObserverCallback, navObserverOptions);
+    if (leftContent) {
+      navObserver.observe(leftContent);
+    }
+});
+
 const texts = [
     "Backend Developer (PHP & Laravel)",
     "Mobile Developer (Flutter)",
@@ -64,7 +87,7 @@ const navItems = document.querySelectorAll(".navbar-list a");
 const options = {
     root: null,
     rootMargin: "0px",
-    threshold: 0.7,
+    threshold: 0.5,
     delay: 100,
     trackVisibility: true,
 };
@@ -99,18 +122,6 @@ navItems.forEach((item) => {
 
 // Add Experience and Education Section Dynamically
 const experiences = [{
-        title: "Web Developer (Laravel)",
-        sub_title: "CGM Golden Land",
-        duration: "2024 - Present",
-        description: "Worked on developing and maintaining web applications using PHP and the Laravel framework. Responsibilities included building new features, maintaining existing sites, integrating APIs, managing databases, and implementing server-side logic. Also collaborated on mobile application development using Flutter.",
-    },
-    {
-        title: "Web Developer (Laravel)",
-        sub_title: "CGM Golden Land",
-        duration: "2024 - Present",
-        description: "Worked on developing and maintaining web applications using PHP and the Laravel framework. Responsibilities included building new features, maintaining existing sites, integrating APIs, managing databases, and implementing server-side logic. Also collaborated on mobile application development using Flutter.",
-    },
-    {
         title: "Web Developer (Laravel)",
         sub_title: "CGM Golden Land",
         duration: "2024 - Present",
@@ -161,14 +172,16 @@ document.getElementById(
 )}+<span>Years of Experience</span>`;
 
 // Add Project Section Dynamically
-const projects = [{
-    title: "Real Time WeatherProject",
-    description: "This is a real time weather website, using OpenWeatherMap API.",
-    imageUrl: "/assets/img/weather-img.png",
-    projectUrl: "https://thiha-kyawzin.github.io/Weather/",
-    externalUrl: "https://openweathermap.org/api",
-    externalText: "OpenWeatherMap API",
-}, ];
+const projects = [
+    {
+        title: "Real Time WeatherProject",
+        description: "This is a real time weather website, using OpenWeatherMap API.",
+        imageUrl: "/assets/img/weather-img.png",
+        projectUrl: "https://thiha-kyawzin.github.io/Weather/",
+        externalUrl: "https://openweathermap.org/api",
+        externalText: "OpenWeatherMap API",
+    },
+];
 
 const projectContainer = document.getElementById("project-body");
 const footer = projectContainer.querySelector(".project-body-footer");
@@ -365,8 +378,19 @@ function validateFormat(value, pattern) {
 
 function showPopup(message) {
     const popup_header = popupOverlay.querySelector(".popup-header");
+    const header = popup_header.querySelector("h2");
     const popup_content = popupOverlay.querySelector(".popup-content");
-    popup_header.textContent = message.header;
+
+    if (message.header === "Success") {
+        popup_header.classList.remove("error-popup");
+        popup_header.classList.add("success-popup");
+    } else {
+        popup_header.classList.remove("success-popup");
+        popup_header.classList.add("error-popup");
+        popup_header.querySelector("button").classList.add("white");
+    }
+
+    header.textContent = message.header;
     popup_content.textContent = message.content;
 
     popupOverlay.classList.add("show");
