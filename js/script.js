@@ -176,7 +176,7 @@ const projects = [
     {
         title: "Real Time WeatherProject",
         description: "This is a real time weather website, using OpenWeatherMap API.",
-        imageUrl: "./assets/img/weather-img.png",
+        imageUrl: "assets/img/weather-img.png",
         projectUrl: "https://thiha-kyawzin.github.io/Weather/",
         externalUrl: "https://openweathermap.org/api",
         externalText: "OpenWeatherMap API",
@@ -195,7 +195,7 @@ projects.forEach((proj, indexCount) => {
     const description = proj.externalUrl ?
         proj.description.replace(
             proj.externalText,
-            `<a href="${proj.externalUrl}" target="_blank">${proj.externalText}</a>`
+            `<a href="./${proj.externalUrl}" target="_blank">${proj.externalText}</a>`
         ) :
         proj.description;
 
