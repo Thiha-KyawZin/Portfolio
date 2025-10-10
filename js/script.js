@@ -176,7 +176,7 @@ const projects = [
     {
         title: "Real Time WeatherProject",
         description: "This is a real time weather website, using OpenWeatherMap API.",
-        imageUrl: "/assets/img/weather-img.png",
+        imageUrl: "assets/img/weather-img.png",
         projectUrl: "https://thiha-kyawzin.github.io/Weather/",
         externalUrl: "https://openweathermap.org/api",
         externalText: "OpenWeatherMap API",
@@ -201,7 +201,7 @@ projects.forEach((proj, indexCount) => {
 
     card.innerHTML = `
         <div class="project-card-image-container">
-            <img src="${proj.imageUrl}" alt="${proj.title}" class="project-card-image"/>
+            <img src="./${proj.imageUrl}" alt="${proj.title}" class="project-card-image"/>
         </div>
         <div class="project-card-body">
             <div class="">
