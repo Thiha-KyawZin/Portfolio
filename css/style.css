@@ -239,7 +239,7 @@ body.popup-open {
 
 .home-container .home-navbar {
     position: fixed;
-    top: 180px;
+    top: 25vh;
     right: 25px;
     padding: 0px 1px;
     background-color: #ffffff1a;
@@ -682,10 +682,6 @@ body.popup-open {
     .home-content-header-title {
         font-size: 32px;
     }
-
-    .home-container .home-navbar {
-        top: 78px;
-    }
 }
 
 @media screen and (max-width: 1092px) {
@@ -749,7 +745,6 @@ body.popup-open {
     }
 
     .home-container .home-navbar {
-        top: 85px;
         right: 40px;
     }
 
@@ -828,7 +823,6 @@ body.popup-open {
     }
 
     .home-container .home-navbar {
-        top: 85px;
         right: 18px;
     }
 
@@ -875,7 +869,6 @@ body.popup-open {
     }
 
     .home-container .home-navbar {
-        top: 85px;
         right: 10px;
     }
 
@@ -906,7 +899,7 @@ body.popup-open {
     }
 
     .home-container .home-navbar {
-        top: 70px;
+        top: 20vh;
     }
     
     .home-navbar .navbar-list {
@@ -1016,7 +1009,7 @@ body.popup-open {
     }
     
     .home-container .home-navbar {
-        top: 55px;
+        top: 25vh;
         transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
         transform: translateX(0);
         opacity: 1;
@@ -1103,10 +1096,6 @@ body.popup-open {
 
     .home {
         padding-top: 45px;
-    }
-    
-    .home-container .home-navbar {
-        top: 95px;
     }
 
     .card-body-title {

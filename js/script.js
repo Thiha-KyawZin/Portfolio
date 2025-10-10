@@ -201,7 +201,7 @@ projects.forEach((proj, indexCount) => {
 
     card.innerHTML = `
         <div class="project-card-image-container">
-            <img src="${proj.imageUrl}" alt="${proj.title}" class="project-card-image"/>
+            <img src="./${proj.imageUrl}" alt="${proj.title}" class="project-card-image"/>
         </div>
         <div class="project-card-body">
             <div class="">
