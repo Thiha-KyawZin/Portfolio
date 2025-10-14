@@ -875,6 +875,11 @@ body.popup-open {
     .profile-img {
         width: 260px;
     }
+
+    .popup {
+        right: 4vw;
+        width: 75%;
+    }
 }
 
 @media screen and (max-width: 640px) {
@@ -1072,6 +1077,15 @@ body.popup-open {
 
     .contact-form {
         gap: 12px;
+    }
+
+    .popup {
+        right: 8vw;
+        width: 75%;
+    }
+
+    .popup .popup-header {
+        font-size: 18px;
     }
 }
 

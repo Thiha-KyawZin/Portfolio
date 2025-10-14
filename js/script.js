@@ -266,6 +266,7 @@ const messages = {
 const popupOverlay = document.getElementById("popup");
 const closeButton = popupOverlay.querySelector(".close");
 const body = document.body;
+const popup = document.querySelector('.popup');
 closeButton.addEventListener("click", hidePopup);
 
 const serviceId = "service_vz2tvof";
@@ -377,6 +378,7 @@ function validateFormat(value, pattern) {
 }
 
 function showPopup(message) {
+    popup.style.display = 'block';
     const popup_header = popupOverlay.querySelector(".popup-header");
     const header = popup_header.querySelector("h2");
     const popup_content = popupOverlay.querySelector(".popup-content");
@@ -399,6 +401,7 @@ function showPopup(message) {
 
 function hidePopup() {
     popupOverlay.classList.remove("show");
+    popup.style.display = 'none';
     body.classList.remove("popup-open");
 }
 
